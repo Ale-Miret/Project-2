@@ -24,7 +24,8 @@ Movie.init(
         },
         movie_time: {
             type: DataTypes.TIME,
-        },  
+        }
+    }, { 
         sequelize,
         timestamps: false,
         freezeTableName: true,

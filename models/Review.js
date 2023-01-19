@@ -12,7 +12,16 @@ Review.init(
             primaryKey: true,
         },
         review_comment: {
-            
+            type: DataTypes.TEXT,
+            allowNull: false,
         }
+    }, {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'review',
     }
-)
+);
+
+module.exports = Review;
