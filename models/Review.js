@@ -11,6 +11,8 @@ Review.init(
             autoIncrement: true,
             primaryKey: true,
         },
-        
+        review_comment: {
+            
+        }
     }
 )
