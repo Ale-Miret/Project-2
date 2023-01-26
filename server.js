@@ -26,6 +26,7 @@ const sess = {
     })
 }
 
+// use session
 app.use(session(sess));    
 
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
@@ -36,6 +37,7 @@ app.use(bodyParser.urlencoded({ encodedUrl: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// use routes from controller folder
 app.use(routes);
 
 
