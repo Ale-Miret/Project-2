@@ -11,6 +11,8 @@ const routes = require('./controller');
 const path = require('path');
 
 
+
+
 const sess = {
     secret: 'Super secret secret',
 
@@ -40,6 +42,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // use routes from controller folder
 app.use(routes);
 
+app.get('/' , async (req, res) => {
+    res.render('main')
+});
+
+app.get('/login' , async (req, res) => {
+    res.render('login')
+})
 
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on ${PORT}`))
