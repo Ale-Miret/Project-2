@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 class User extends Model {}
 
 User.init({
-    id: {
+    username: {
         type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
