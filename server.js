@@ -10,7 +10,8 @@ const sequelize = require('./config/connection');
 const routes = require('./controller');
 const path = require('path');
 const bcrypt = require('bcrypt');
-
+const withAuth = require('./utils/auth');
+const { Review } = require('./model');
 
 
 
@@ -51,8 +52,15 @@ app.get('/login' , async (req, res) => {
     res.render('login')
 });
 
-app.get('/profile', async (req, res) => {
-    res.render('profile')   
+app.get('/profile', withAuth, async (req, res) => {
+   Review.findAll()
+    .then((reviews) => {
+    res.render('profile', { 
+        layout: 'main',
+        email: req.session.email, 
+        reviews: reviews 
+        });
+    });
 });
 
 // app.post("/login", async (req, res) => {

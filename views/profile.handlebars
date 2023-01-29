@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome back, {{email}}!</h2>
   </div>
 </div>
 
@@ -10,16 +10,16 @@
 
     <form class="form new-review-form">
       <div class="form-group">
-        <label for="movie-name">movie name:</label>
-        <input class="form-input" type="text" id="movie-name" name="movie-name" />
+        <label for="movie-name">movie name search:</label>
+        <input class="form-input" type="text" id="movie-name-box" name="movie-name" />
       </div>
       <div class="form-group">
         <label for="review-title">write your review:</label>
-        <input class="form-input" type="number" id="review-title" name="review-title" />
+        <input class="form-input" type="number" id="review-title-box" name="review-title" />
       </div>
       <div class="form-group">
         <label for="review-desc">description:</label>
-        <textarea class="form-input" id="review-desc" name="review-desc"></textarea>
+        <textarea class="form-input" id="review-desc" name="review-desc-box"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -28,13 +28,17 @@
   </div>
 
   {{#if reviews.length}}
-  <div class="col-md-6 review-list">
+  <div class="col-md-6">
     <h3>Current Reviews:</h3>
 
     {{#each reviews as |review|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/api/review/{{review.id}}">{{review.name}}</a></h4>
+        <h4><a href="/api/review/{{review.id}}">{{review.movie_name}}</a></h4>
+      </div>
+       <div class="form-group">
+        <label for="load-review-desc">Review:</label>
+        <textarea class="form-input" id="load-review-desc" name="load-review-desc">{{review.review_comment}}</textarea>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
@@ -46,3 +50,4 @@
 </div>
 
 <script src="./js/profile.js"></script>
+<script src=""></script>
