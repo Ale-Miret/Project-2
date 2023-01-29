@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(
       'review_db',
       'root',
-      'Eagles10!',
+      'Freebird4257!',
       {
         host: 'localhost',
         dialect: 'mysql',
