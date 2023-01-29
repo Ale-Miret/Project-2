@@ -3,12 +3,14 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const sequelize = require('sequelize');
 const session = require('express-session');
+const withAuth = require('../../utils/auth');
 const User = require('../../model').User;
 
-router.get('/profile', (req, res) => {
+router.get('/profile', withAuth, (req, res) => {
 
     res.render('profile');
 });
+
 
 // login routes
 router.post('/login', (req, res) => {
@@ -20,9 +22,17 @@ router.post('/login', (req, res) => {
     .then(user => {
         if(user) { 
             bcrypt.compare(req.body.password, user.password, (err, result) => {
+                console.log(result);
+                console.log(err);
                 if(result) {
                     req.session.user = user.email;
-                    res.redirect('/profile');
+                    req.session.save(() => {
+                        req.session.email = user.email;
+                        req.session.logged_in = true;
+
+                        res.redirect('/profile');
+                        // res.status(200).json(userData);
+                      });
                 } else {
                     res.json({
                         message: 'Incorrect Email or Password!'
@@ -66,8 +76,14 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: hashedPassword,
         });
-        // res.status(200).json(newUserSignup);
-        res.redirect('/profile');
+
+        req.session.save(() => {
+            req.session.email = newUserSignup.email;
+            req.session.logged_in = true;
+
+            res.redirect('/profile');
+        });
+       
     } catch (error) {
         res.status(400).json(error);
     }
@@ -98,3 +114,9 @@ router.post('/', async (req, res) => {
 
 
 module.exports = router;
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Se
