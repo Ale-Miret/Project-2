@@ -11,10 +11,10 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    {{!-- <header class="display-flex justify-space-between align-center p-2"> --}}
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Rancid Banana</a>
+        {{!-- <span role="img" aria-label="banana">🍌</span> --}}
+        <a class="rbl" id="rancidbanana" href="/">Rancid Banana</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -22,7 +22,7 @@
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a id= "loginbtn" class="rbl" href="/login">login</a>
         {{/if}}
       </nav>
     </header>

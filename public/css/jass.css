@@ -371,6 +371,7 @@
   h6 {
     margin: 0 0 0.5rem;
     line-height: 1.25;
+  
   }
   
   h1 {
@@ -422,13 +423,14 @@
   }
   
   a {
-    color: #1b89bc;
+    color: black;
     text-decoration: none;
   }
   
   a:hover {
-    color: #065b83;
+    color: yellow;
     text-decoration: underline;
+    
   }
   
   /* HEIGHT / WIDTH UTILS */
@@ -1011,12 +1013,12 @@
   }
   
   .btn.btn-primary {
-    background-color: #2d3e50;
+    background-color: black;
     color: #d9e9e8;
   }
   
   .btn.btn-primary:hover {
-    background-color: #57779a;
+    background-color: gray;
   }
   
   .btn.btn-danger {
