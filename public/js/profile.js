@@ -1,6 +1,21 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-
+    
+    // const movier = require('movier');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    
+    searchButton.addEventListener('click', function() {
+      const searchTerm = searchInput.value;
+    
+      movier.search(searchTerm)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    });
     const name = document.getElementById("#movie-name").value.trim();
     const userComment = document.getElementById("#review-title").value.trim();
     const rating = document.getElementById("#review-desc").value.trim();
@@ -8,7 +23,7 @@ const newFormHandler = async (event) => {
     if(name && userComment && rating) {
         const response = await fetch('/api/reviews', {
             method: 'POST',
-            body: JSON.stringify({ name: name, userComment: userComment, rating: rating }),
+            body: JSON.stringify({ name, userComment: userComment, rating: rating }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -23,7 +38,7 @@ const newFormHandler = async (event) => {
 
 const deleteButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) { 
-        const id = event.target.hasAttribute('data-id');
+        const id = event.target.getAttribute('data-id');
 
         const response = await fetch(`api/reviews/${id}`, {
             method: 'DELETE',
@@ -37,9 +52,9 @@ const deleteButtonHandler = async (event) => {
 };
 
 document
-    .querySelector('new-review-form')
+    .querySelector('#new-review-form')
     .addEventListener('submit', newFormHandler);
 
 document
-    .querySelector('review-list')
-    .addEventListener('click', deleteButtonHandler);
+    .querySelector('#review-list')
+    // .addEventListener('click', deleteButtonHandler);

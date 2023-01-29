@@ -21,7 +21,7 @@ router.post('/login', (req, res) => {
         if(user) { 
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if(result) {
-                    req.session.user = email;
+                    req.session.user = user.email;
                     res.redirect('/profile');
                 } else {
                     res.json({
