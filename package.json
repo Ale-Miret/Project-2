@@ -100,6 +100,7 @@
     "mongodb": "^2.2.34",
     "mongodb-core": "^2.1.18",
     "mongoose": "^4.13.21",
+    "movier": "^2.3.0",
     "mpath": "^0.5.1",
     "mpromise": "^0.5.5",
     "mquery": "^2.3.3",

@@ -1,0 +1,76 @@
+body {
+  /* position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  background: url('../images/bananaworld.jpeg');
+  background-size: cover;
+  /* background-position: center; */
+}
+
+#rancidbanana {
+  color: black;
+  font-size:larger;
+ 
+}
+
+#rancidbanana:hover {
+  color: yellow;
+}
+
+/* Presentational styles */
+.rbl {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+#loginbtn {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
+  color: yellow;
+}
+
+#loginbtn:hover {
+  color: black;
+}
+body {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+header, .project:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+    
+  }
+  
+  .no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #1b89bc;
+    text-decoration: none;
+    font-size: 100%;
+  }
+  
+  .no-button:hover {
+    color: #065b83;
+    text-decoration: underline;
+  }
+  
+  .dollar-amount {
+    color: #056605;
+    font-weight: bold;
+    margin-left: -5px;
+  }
