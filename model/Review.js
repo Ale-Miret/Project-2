@@ -34,7 +34,7 @@ Review.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Review',
+    modelName: 'review',
 },{
 user_id: {
     type: DataTypes.INTEGER,
