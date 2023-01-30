@@ -1,15 +1,16 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const movie_name = document.getElementById("#movie-name-box").value.trim();
-    const rating = document.getElementById("#review-title-box").value.trim();
-    const review_comment = document.getElementById("#review-desc-box").value.trim();
+    const movie_name = document.getElementById("movie-name-box").value.trim();
+    const rating = document.getElementById("review-title-box").value.trim();
+    const review_comment = document.getElementById("review-desc-box").value.trim();
     
     if(movie_name && rating && review_comment) {
-        const response = await fetch('/api/reviews', {
+        const response = await fetch('/api/review', {
             method: 'POST',
             body: JSON.stringify({ movie_name: movie_name, rating: rating, review_comment: review_comment }),
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
         });
@@ -25,7 +26,7 @@ const deleteButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) { 
         const id = event.target.hasAttribute('data-id');
 
-        const response = await fetch(`api/reviews/${id}`, {
+        const response = await fetch(`api/review/${id}`, {
             method: 'DELETE',
         });
         if(response.ok) {
