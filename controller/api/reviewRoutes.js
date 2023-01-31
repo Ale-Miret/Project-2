@@ -7,52 +7,51 @@ const Review = require('../../model').Review;
 
 // get route for all reviews
 router.get('/', (req, res) => {
-    dbModel.Review.findAll().then(reviews => {
+    Review.findAll().then((reviews) => {
         res.json(reviews);
     });
 });
 
 // get route for review by id
 router.get('/:id', (req, res) => {
-    dbModel.Review.findByPk(
+    Review.findByPk(
         req.params.id,
-    ).then(review => {
+    ).then((review) => {
         res.json(review);
     });
 });
 
 router.post('/', withAuth, (req, res) => {
-    dbModel.Review.create({
-        movieId: req.body.movie_id,
-        userId: req.body.user.id,
-        reviewComment: req.body.review_comment,
+    Review.create({
+        movie_name: req.body.movie_name,
+        review_comment: req.body.review_comment,
         rating: req.body.rating,
-    }).then(review => {
+    }).then((review) => {
         res.json(review);
     });
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    dbModel.Review.update({
-        reviewComment: req.body.review_comment,
+    Review.update({
+        review_comment: req.body.review_comment,
         rating: req.body.rating,
     },{
         where: {
             id: req.params.id,
-            userId: req.params.user.id,
+            user_id: req.params.user.id,
         }
-    }.then(updatedReview => {
+    }.then((updatedReview) => {
         res.json(updatedReview);
     }));
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-    dbModel.Review.destroy({
+    Review.destroy({
         where: {
             id: req.params.id,
-            userId: req.user.id,
+            user_id: req.user.id,
         }
-    }).then(deletedReview => {
+    }).then((deletedReview) => {
         res.json(deletedReview);
     });
 });
