@@ -59,11 +59,7 @@ const newFormHandler = async (event) => {
 
     const movie_name = document.getElementById("movie-name-box").value.trim();
     const rating = document.getElementById("review-title-box").value.trim();
-<<<<<<< HEAD
-    const review_comment = document.getElementById("review-desc").value.trim();
-=======
     const review_comment = document.getElementById("review-desc-box").value.trim();
->>>>>>> b593642ea88ea06adcce9c53b249df31203995ff
     
     if(movie_name && rating && review_comment) {
         const response = await fetch('/api/review', {
