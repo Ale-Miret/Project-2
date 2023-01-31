@@ -27,7 +27,7 @@ Login/Sign up page:
 ![project](./public/images/bananaloginsignup.png)
 
 Review page:
-![project](./public/images/bananaprofile.png)
+![project](./public/images/bananareview.png)
 
 
 ## Links
