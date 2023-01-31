@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <label for="review-title">rate the movie:</label>
-        <input class="form-input" type="number" id="review-title-box" name="review-title" />
+        <p class="form-input" type="number" id="review-title-box" name="review-title" />
       </div>
       <div class="form-group">
         <label for="review-desc">write your review:</label>
@@ -37,8 +37,7 @@
         <h4><a href="/api/review/{{review.id}}">{{review.movie_name}}</a></h4>
       </div>
        <div class="form-group">
-        <label for="load-review-desc">Review:</label>
-        <textarea class="form-input" id="load-review-desc" name="load-review-desc">{{review.review_comment}}</textarea>
+        <p class="form-input" id="load-review-desc" name="load-review-desc">{{review.review_comment}}</p>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
