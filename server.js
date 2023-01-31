@@ -80,4 +80,3 @@ app.get('/profile', withAuth, async (req, res) => {
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on ${PORT}`))
 });
-
