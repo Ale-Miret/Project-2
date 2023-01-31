@@ -20,10 +20,19 @@ This application gives users the ability to: create their own profiles where the
 * You may access the application by either clicking on the Heroku link, or running it in your server. 
 
 ## Screenshot
+Homepage:
+![project](./public/images/bananalogin.png)
+
+Login/Sign up page:
+![project](./public/images/bananaloginsignup.png)
+
+Review page:
+![project](./public/images/bananaprofile.png)
 
 
 ## Links
 GitHub repo: https://github.com/Ale-Miret/Project-2.git
+
 Deployed link: 
 
 ## Colaborators
