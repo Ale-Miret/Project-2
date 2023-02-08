@@ -45,7 +45,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 app.get('/' , async (req, res) => {
-    res.render('main')
+    res.render('login', {
+        layout: 'main'
+    })
 });
 
 app.get('/login' , async (req, res) => {

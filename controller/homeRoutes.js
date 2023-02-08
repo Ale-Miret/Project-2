@@ -7,8 +7,9 @@ const movier = require('movier');
 // home route to homepage
 router.get('/', async(req, res) => {
     // console.log(await movier.getTitleDetailsByName("interstellar 2014"));
-    res.render('homepage', {});
-
+    res.render('login', {
+        layout: 'main'
+    })
 });
 
 router.get('/api/moviesearch/:query' , async(req, res) => {
